@@ -1,0 +1,57 @@
+<!DOCYTPE html>
+<html>
+
+<head>
+	<title>Josb Search</title>
+	<style>
+		body {
+			background-color: white;
+			font-family: "Arial", Helvetica, sans-serif;
+			text-align: center;
+		}
+
+		h4 {
+			font: solid;
+			font-size: 20px;
+		}
+
+		a {
+			text-decoration: none;
+			color: #1b1c1c;
+		}
+
+		.list {
+			background-color: #f5f6fa;
+			margin-top: 20px;
+			margin-bottom: 20px;
+			margin-left: 150px;
+			margin-right: 150px;
+       font-weight: 100;
+			padding: 10px;
+			border-radius: 5px;
+			color: #1b1c1c;
+			box-shadow: 0 6px 10px -1px rgba(50, 50, 93, 0.25)
+		}
+	</style>
+</head>
+
+<body>
+	<h1><a href="/">Search Results</a></h1>
+	<h3> {{resultsNumber}} {{keyword}} jobs found</h3>
+	<div class="link">
+		<a class="link-button" href="/export?keyword={{keyword}}">✔Download Results</a>
+	</div>
+	<div class="container">
+
+		{%for job in jobs%}
+		<div class="list">
+			<h4> {{job.title}}</h4>
+			<p>{{job.company}}</p>
+			<p>{{job.location}}</p>
+			<p><a href="{{job.link}}" target="=" _blank " >Apply</p></a>
+    </div>
+    {% endfor %}
+    
+  </div>
+</body>
+</html>
